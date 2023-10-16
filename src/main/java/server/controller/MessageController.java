@@ -11,7 +11,7 @@ import server.messaging.PrivateMessage;
 @RestController
 @RequestMapping("/api/messages")
 public class MessageController {
-    private SimpMessagingTemplate simpMessagingTemplate;
+    private final SimpMessagingTemplate simpMessagingTemplate;
 
     @Autowired
     public MessageController(SimpMessagingTemplate simpMessagingTemplate) {
@@ -21,5 +21,6 @@ public class MessageController {
     @PostMapping("/private")
     public void sendPrivateMessage(@RequestBody PrivateMessage message) {
         simpMessagingTemplate.convertAndSendToUser(message.getRecipient(), "/queue/private", message);
+        System.out.println("Sent private message from " + message.getSender() + " to " + message.getRecipient() + ": " + message.getContent());
     }
 }

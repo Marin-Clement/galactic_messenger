@@ -34,3 +34,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    archiveBaseName = 'app.jar'
+    manifest {
+        attributes 'Main-Class': 'server.GalacticMessengerServer'
+    }
+
+}
