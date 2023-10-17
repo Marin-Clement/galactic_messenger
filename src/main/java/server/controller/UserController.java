@@ -15,7 +15,6 @@ class UserController {
 
     @PostMapping("/register")
     public String registerUser(@RequestParam String username, @RequestParam String password) {
-        // In a real application, you should hash the password and store it securely.
         users.put(username, password);
         System.out.println("Registered user " + username + " with password " + password);
         return "User registered successfully.";

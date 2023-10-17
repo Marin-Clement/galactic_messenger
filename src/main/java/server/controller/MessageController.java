@@ -1,26 +1,16 @@
 package server.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import server.messaging.PrivateMessage;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
 
-@RestController
-@RequestMapping("/api/messages")
+@Controller
 public class MessageController {
-    private final SimpMessagingTemplate simpMessagingTemplate;
 
-    @Autowired
-    public MessageController(SimpMessagingTemplate simpMessagingTemplate) {
-        this.simpMessagingTemplate = simpMessagingTemplate;
-    }
-
-    @PostMapping("/private")
-    public void sendPrivateMessage(@RequestBody PrivateMessage message) {
-        simpMessagingTemplate.convertAndSendToUser(message.getRecipient(), "/queue/private", message);
-        System.out.println("Sent private message from " + message.getSender() + " to " + message.getRecipient() + ": " + message.getContent());
+    @MessageMapping("/send-message")
+    @SendTo("/topic/messages")
+    public String sendMessage(String message) {
+        System.out.println("Received message: " + message);
+        return message;
     }
 }
