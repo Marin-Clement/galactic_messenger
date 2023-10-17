@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="">
+    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Functional webSocket messenger">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/component/UserSessionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +82,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "server",
     "jdk.selected.JAVA_MODULE": "20",
@@ -99,7 +103,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.galactic_messenger [build]">
     <configuration name="galactic_messenger [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -144,11 +148,24 @@
       <option name="presentableId" value="Default" />
       <updated>1697446573863</updated>
       <workItem from="1697446573864" duration="500000" />
-      <workItem from="1697531214925" duration="4301000" />
+      <workItem from="1697531214925" duration="12677000" />
     </task>
+    <task id="LOCAL-00001" summary="[ADD] Functional webSocket messenger">
+      <option name="closed" value="true" />
+      <created>1697541066894</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697541066894</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[ADD] Functional webSocket messenger" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Functional webSocket messenger" />
   </component>
 </project>
