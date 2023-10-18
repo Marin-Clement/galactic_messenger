@@ -39,7 +39,7 @@ public class WebSocketClient {
             System.out.println("Connected to WebSocket Server");
 
             // Subscribe to the /topic/messages to receive messages from the server
-            stompSession.subscribe("/topic/messages", new StompFrameHandler() {
+            stompSession.subscribe("/topic/messages/" + username, new StompFrameHandler() {
                 @Override
                 public Type getPayloadType(StompHeaders headers) {
                     return byte[].class; // Specify the payload type as byte[]
