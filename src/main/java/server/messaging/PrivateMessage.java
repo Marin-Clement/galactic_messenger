@@ -1,16 +1,26 @@
 package server.messaging;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PrivateMessage {
     private String sender;
     private String recipient;
     private String content;
 
-    public PrivateMessage() {
-    }
-
-    public PrivateMessage(String sender, String recipient, String content) {
+    @JsonCreator
+    public PrivateMessage(
+            @JsonProperty("sender") String sender,
+            @JsonProperty("recipient") String recipient,
+            @JsonProperty("content") String content
+    ) {
         this.sender = sender;
         this.recipient = recipient;
+        this.content = content;
+    }
+
+    public PrivateMessage(String username, String content) {
+        this.sender = username;
         this.content = content;
     }
 
