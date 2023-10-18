@@ -2,17 +2,19 @@ package client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.*;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.NonNullApi;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.messaging.simp.stomp.*;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 import org.springframework.web.socket.sockjs.client.SockJsClient;
 import org.springframework.web.socket.sockjs.client.WebSocketTransport;
-import server.messaging.PrivateMessage;
 
 import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.Scanner;
+import server.messaging.PrivateMessage;
 
 
 public class WebSocketClient {
@@ -20,7 +22,9 @@ public class WebSocketClient {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String serverUrl = "http://localhost:8080/api/";
+
+    private final int port = 8080;
+    private final String serverUrl = "http://localhost:" + port + "/api/";
 
     public static void main(String[] args) {
         WebSocketClient client = new WebSocketClient();
@@ -35,7 +39,7 @@ public class WebSocketClient {
         StompSessionHandler sessionHandler = new MyStompSessionHandler();
         StompSession stompSession;
         try {
-            stompSession = stompClient.connect("ws://localhost:8080/messages", sessionHandler).get();
+            stompSession = stompClient.connect("ws://localhost:" + port + "/messages", sessionHandler).get();
             System.out.println("Connected to WebSocket Server");
 
             // Subscribe to the /topic/messages to receive messages from the server

@@ -6,11 +6,12 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import server.component.UserSessionManager;
 import server.messaging.PrivateMessage;
+import server.messaging.GroupMessage;
 
 @Controller
 public class MessageController {
-    private UserSessionManager userSessionManager;
-    private SimpMessagingTemplate messagingTemplate;
+    private final UserSessionManager userSessionManager;
+    private final SimpMessagingTemplate messagingTemplate;
 
     @Autowired
     public MessageController(UserSessionManager userSessionManager, SimpMessagingTemplate messagingTemplate) {
@@ -19,7 +20,7 @@ public class MessageController {
     }
 
     @MessageMapping("/send-message")
-    public void sendMessage(PrivateMessage message) {
+    public String sendMessage(PrivateMessage message) {
         String sender = message.getSender();
 
         // Check if the sender is a connected user
@@ -30,13 +31,32 @@ public class MessageController {
             if (userSessionManager.isUserConnected(recipient)) {
                 messagingTemplate.convertAndSend(destination, message);
                 System.out.println("Sent message: " + message.getContent() + " from " + sender + " to " + recipient);
+                return "Message sent.";
             } else {
                 System.out.println("Recipient is not connected: " + recipient);
-                // Handle the case where the recipient is not connected
+                return "Recipient is not connected.";
             }
         } else {
             System.out.println("Sender is not connected: " + sender);
-            // Handle the case where the sender is not connected
+            return "Sender is not connected.";
+        }
+    }
+
+    @MessageMapping("/send-group-message")
+    public String sendGroupMessage(GroupMessage message) {
+        String sender = message.getSender();
+        String group = message.getGroup();
+
+        // Check if the sender is a connected user
+        if (userSessionManager.isUserConnected(sender)) {
+            String destination = "/topic/groups/" + group;
+
+            messagingTemplate.convertAndSend(destination, message);
+            System.out.println("Sent message: " + message.getContent() + " from " + sender + " to " + group);
+            return "Message sent.";
+        } else {
+            System.out.println("Sender is not connected: " + sender);
+            return "Sender is not connected.";
         }
     }
 }
