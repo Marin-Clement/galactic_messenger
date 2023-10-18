@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Functional webSocket messenger">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/component/UserSessionManager.java" afterDir="false" />
+    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Connection + register + messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +46,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Marin-Clement"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Marin-Clement&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -65,45 +60,45 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2Wq42sGU8kD3mptO1oPJ31q6WrE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "server",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "/Users/clementmarin/IdeaProjects/galactic_messenger",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;server&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/clementmarin/IdeaProjects/galactic_messenger&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.galactic_messenger [build]">
+  <component name="RunManager" selected="Spring Boot.GalacticMessengerServer">
     <configuration name="galactic_messenger [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -148,7 +143,9 @@
       <option name="presentableId" value="Default" />
       <updated>1697446573863</updated>
       <workItem from="1697446573864" duration="500000" />
-      <workItem from="1697531214925" duration="12677000" />
+      <workItem from="1697531214925" duration="13100000" />
+      <workItem from="1697617679847" duration="4000" />
+      <workItem from="1697617917582" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Functional webSocket messenger">
       <option name="closed" value="true" />
@@ -158,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697541066894</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[ADD] Connection + register + messages">
+      <option name="closed" value="true" />
+      <created>1697549616172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697549616172</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[ADD] Functional webSocket messenger" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Functional webSocket messenger" />
+    <MESSAGE value="[ADD] Connection + register + messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Connection + register + messages" />
   </component>
 </project>
