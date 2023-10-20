@@ -1,9 +1,5 @@
-package client;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.*;
-import org.springframework.lang.NonNull;
-import org.springframework.lang.NonNullApi;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.messaging.simp.stomp.*;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
@@ -14,7 +10,8 @@ import org.springframework.web.socket.sockjs.client.WebSocketTransport;
 import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.Scanner;
-import server.messaging.PrivateMessage;
+
+import server.messaging.Message;
 
 
 public class WebSocketClient {
@@ -23,7 +20,7 @@ public class WebSocketClient {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final RestTemplate restTemplate = new RestTemplate();
 
-    private final int port = 8080;
+    private final int port = 8079;
     private final String serverUrl = "http://localhost:" + port + "/api/";
 
     public static void main(String[] args) {
@@ -39,7 +36,7 @@ public class WebSocketClient {
         StompSessionHandler sessionHandler = new MyStompSessionHandler();
         StompSession stompSession;
         try {
-            stompSession = stompClient.connect("ws://localhost:" + port + "/messages", sessionHandler).get();
+            stompSession = stompClient.connectAsync("ws://localhost:" + port + "/ws", sessionHandler).get();
             System.out.println("Connected to WebSocket Server");
 
             // Subscribe to the /topic/messages to receive messages from the server
@@ -52,7 +49,7 @@ public class WebSocketClient {
                 @Override
                 public void handleFrame(StompHeaders headers, Object payload) {
                     byte[] messageBytes = (byte[]) payload;
-                    PrivateMessage message = deserializeMessage(messageBytes);
+                    Message message = deserializeMessage(messageBytes);
                     // if the message is from the user, don't print it
                     if (!message.getSender().equals(username) && message.getRecipient().equals(username)) {
                         System.out.println("Received message: " + message.getContent() + " from " + message.getSender());
@@ -70,7 +67,7 @@ public class WebSocketClient {
                 if (input.equalsIgnoreCase("exit")) {
                     break;
                 }
-                PrivateMessage message = new PrivateMessage(username, recipient, input);
+                Message message = new Message(username, recipient, input);
                 byte[] messageBytes = serializeMessage(message);
                 stompSession.send("/app/send-message", messageBytes);
             }
@@ -133,7 +130,7 @@ public class WebSocketClient {
     }
 
     // Serialize a PrivateMessage into bytes
-    private byte[] serializeMessage(PrivateMessage message) {
+    private byte[] serializeMessage(Message message) {
         try {
             return objectMapper.writeValueAsBytes(message);
         } catch (Exception e) {
@@ -142,12 +139,12 @@ public class WebSocketClient {
         }
     }
 
-    private PrivateMessage deserializeMessage(byte[] messageBytes) {
+    private Message deserializeMessage(byte[] messageBytes) {
         try {
-            return objectMapper.readValue(messageBytes, PrivateMessage.class);
+            return objectMapper.readValue(messageBytes, Message.class);
         } catch (Exception e) {
             e.printStackTrace();
-            return new PrivateMessage("", "", "");
+            return new Message("", "", "");
         }
     }
 }

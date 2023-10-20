@@ -44,7 +44,7 @@ public class UserController {
 
     @PostMapping("/logout")
     public String logoutUser(@RequestParam String username) {
-        userSessionManager.removeUser(username); // Remove the user from the connected users list
+        userSessionManager.removeUser(username);
         return "Logout successful.";
     }
 }
