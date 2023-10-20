@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Customs end-route for users (Private messages)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/messaging/GroupMessage.java" afterDir="false" />
+    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Add Group Message">
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/component/GroupManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/controller/GroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/GalacticMessengerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/GroupMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/messaging/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -96,6 +102,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -104,7 +111,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.WebSocketClient">
+  <component name="RunManager" selected="Gradle.galactic_messenger [build]">
     <configuration name="WebSocketClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.WebSocketClient" />
       <module name="galactic_messenger.main" />
@@ -141,12 +148,18 @@
       <method v="2" />
     </configuration>
     <configuration name="GalacticMessengerServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="8080" />
       <module name="galactic_messenger.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="server.GalacticMessengerServer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.WebSocketClient" />
+      <item itemvalue="Gradle.galactic_messenger [build]" />
+      <item itemvalue="Spring Boot.GalacticMessengerServer" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.galactic_messenger [build]" />
@@ -165,7 +178,11 @@
       <workItem from="1697446573864" duration="500000" />
       <workItem from="1697531214925" duration="13100000" />
       <workItem from="1697617679847" duration="4000" />
-      <workItem from="1697617917582" duration="4843000" />
+      <workItem from="1697617917582" duration="6785000" />
+      <workItem from="1697631991689" duration="259000" />
+      <workItem from="1697632255394" duration="197000" />
+      <workItem from="1697787172890" duration="185000" />
+      <workItem from="1697787361992" duration="5568000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Functional webSocket messenger">
       <option name="closed" value="true" />
@@ -191,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697618914922</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[ADD] Add Group Message">
+      <option name="closed" value="true" />
+      <created>1697622789449</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697622789449</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +226,7 @@
     <MESSAGE value="[ADD] Functional webSocket messenger" />
     <MESSAGE value="[ADD] Connection + register + messages" />
     <MESSAGE value="[ADD] Customs end-route for users (Private messages)" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Customs end-route for users (Private messages)" />
+    <MESSAGE value="[ADD] Add Group Message" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Add Group Message" />
   </component>
 </project>

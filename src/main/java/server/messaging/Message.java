@@ -3,20 +3,20 @@ package server.messaging;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class GroupMessage {
+public class Message {
     private String sender;
     private String content;
-    private String group;
+    private String recipient;
 
     @JsonCreator
-    public GroupMessage(
+    public Message(
             @JsonProperty("sender") String sender,
-            @JsonProperty("content") String content,
-            @JsonProperty("group") String group
-    ) {
+            @JsonProperty("recipient") String recipient,
+            @JsonProperty("content") String content
+            ) {
         this.sender = sender;
+        this.recipient = recipient;
         this.content = content;
-        this.group = group;
     }
 
     public String getSender() {
@@ -27,8 +27,8 @@ public class GroupMessage {
         return content;
     }
 
-    public String getGroup() {
-        return group;
+    public String getRecipient() {
+        return recipient;
     }
 
     public void setSender(String sender) {
@@ -39,7 +39,7 @@ public class GroupMessage {
         this.content = content;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
     }
 }
