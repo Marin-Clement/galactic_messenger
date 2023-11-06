@@ -5,7 +5,6 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import server.component.UserSessionManager;
-import server.messaging.PrivateMessage;
 import server.messaging.GroupMessage;
 
 @Controller
