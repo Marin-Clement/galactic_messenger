@@ -38,7 +38,7 @@ public class UserController {
             userSessionManager.addUser(username);
             return "Login successful.";
         } else {
-            return "Invalid credentials.";
+            return "Login failed.";
         }
     }
 

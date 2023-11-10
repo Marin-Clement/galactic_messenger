@@ -15,7 +15,7 @@ public class GalacticMessengerServer {
             int port = Integer.parseInt(args[0]);
             System.setProperty("server.port", String.valueOf(port));
         }
-
+        System.setProperty("server.port", String.valueOf("8080"));
         SpringApplication.run(GalacticMessengerServer.class, args);
         System.out.println("Galactic Messenger Server started on port " + System.getProperty("server.port"));
     }
