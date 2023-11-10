@@ -70,6 +70,7 @@ public class MessageController {
 
         // * Send the message to all members of the group
         for (String recipient : groupManager.getGroupMembers(group)) {
+            System.out.println("Recipient: " + recipient);
             String destination = "/topic/messages/" + recipient;
             messagingTemplate.convertAndSend(destination, message);
         }

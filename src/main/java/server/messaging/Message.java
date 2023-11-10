@@ -7,16 +7,19 @@ public class Message {
     private String sender;
     private String content;
     private String recipient;
+    private boolean isPrivate;
 
     @JsonCreator
     public Message(
             @JsonProperty("sender") String sender,
             @JsonProperty("recipient") String recipient,
-            @JsonProperty("content") String content
+            @JsonProperty("content") String content,
+            @JsonProperty("isPrivate") boolean isPrivate
             ) {
         this.sender = sender;
         this.recipient = recipient;
         this.content = content;
+        this.isPrivate = isPrivate;
     }
 
     public String getSender() {
@@ -31,6 +34,10 @@ public class Message {
         return recipient;
     }
 
+    public boolean getIsPrivate() {
+        return isPrivate;
+    }
+
     public void setSender(String sender) {
         this.sender = sender;
     }
@@ -41,5 +48,9 @@ public class Message {
 
     public void setRecipient(String recipient) {
         this.recipient = recipient;
+    }
+
+    public void setIsPrivate(boolean isPrivate) {
+        this.isPrivate = isPrivate;
     }
 }

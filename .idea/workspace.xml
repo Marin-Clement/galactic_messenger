@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Add Group Message">
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/component/GroupManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/controller/GroupController.java" afterDir="false" />
+    <list default="true" id="e716293b-6c40-47d8-8f10-54abeca50503" name="Changes" comment="[ADD] Add Group">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientRecursif.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/WebSocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/config/WebSocketConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/GroupMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/messaging/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/PrivateMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/messaging/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/messaging/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,37 +80,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;server&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/clementmarin/IdeaProjects/galactic_messenger&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "client-10/11",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "/Users/clementmarin/IdeaProjects/galactic_messenger",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.galactic_messenger [build]">
+  <component name="RunManager">
+    <configuration name="ClientController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.ClientController" />
+      <module name="galactic_messenger.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebSocketClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.WebSocketClient" />
       <module name="galactic_messenger.main" />
@@ -156,12 +169,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ClientController" />
       <item itemvalue="Application.WebSocketClient" />
       <item itemvalue="Gradle.galactic_messenger [build]" />
       <item itemvalue="Spring Boot.GalacticMessengerServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientController" />
         <item itemvalue="Gradle.galactic_messenger [build]" />
         <item itemvalue="Application.WebSocketClient" />
       </list>
@@ -182,7 +197,9 @@
       <workItem from="1697631991689" duration="259000" />
       <workItem from="1697632255394" duration="197000" />
       <workItem from="1697787172890" duration="185000" />
-      <workItem from="1697787361992" duration="5568000" />
+      <workItem from="1697787361992" duration="6114000" />
+      <workItem from="1699348417881" duration="3877000" />
+      <workItem from="1699606471177" duration="8460000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Functional webSocket messenger">
       <option name="closed" value="true" />
@@ -216,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697622789449</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[ADD] Add Group">
+      <option name="closed" value="true" />
+      <created>1697792995444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697792995444</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +252,12 @@
     <MESSAGE value="[ADD] Connection + register + messages" />
     <MESSAGE value="[ADD] Customs end-route for users (Private messages)" />
     <MESSAGE value="[ADD] Add Group Message" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Add Group Message" />
+    <MESSAGE value="[ADD] Add Group" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Add Group" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/galactic_messenger$ClientController.ic" NAME="ClientController Coverage Results" MODIFIED="1699607629019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>client.*</FILTER>
+    </SUITE>
   </component>
 </project>
