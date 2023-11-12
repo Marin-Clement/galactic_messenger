@@ -18,9 +18,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
-
-
-
     // Spring Boot Starter for Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
@@ -31,24 +28,31 @@ dependencies {
     implementation 'com.h2database:h2'
 
 }
-
-test {
-    useJUnitPlatform()
-}
-
-jar {
-    archiveBaseName = 'app.jar'
-    manifest {
-        attributes 'Main-Class': 'server.GalacticMessengerServer'
+//test {
+//    useJUnitPlatform()
+//}
+//
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'server.GalacticMessengerServer'
+//    }
+//    from sourceSets.main.output
+//    archiveBaseName = 'galactic-messenger-server'
+//    destinationDirectory = file("$rootDir")
+//}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
     }
-
-}
-subprojects {
-    apply plugin: 'java'
-
-    repositories {
-        mavenCentral()
-    }
 }
 
+bootJar {
+    archiveBaseName = 'galactic_messenger_server'
+    mainClass = 'server.GalacticMessengerServer'
+}
 
+bootJar {
+    destinationDirectory = file(project(':').projectDir)
+}

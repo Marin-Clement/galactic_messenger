@@ -31,24 +31,32 @@ dependencies {
     implementation 'com.h2database:h2'
 
 }
-
-test {
-    useJUnitPlatform()
-}
-
-jar {
-    archiveBaseName = 'app.jar'
-    manifest {
-        attributes 'Main-Class': 'server.GalacticMessengerServer'
+//test {
+//    useJUnitPlatform()
+//}
+//
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'client.WebSocketClient'
+//    }
+//    from sourceSets.main.output
+//    archiveBaseName = 'galactic-messenger-client'
+//    destinationDirectory = file("$rootDir")
+//
+//}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
     }
-
-}
-subprojects {
-    apply plugin: 'java'
-
-    repositories {
-        mavenCentral()
-    }
 }
 
+bootJar {
+    archiveBaseName = 'galactic_messenger_client'
+    mainClass = 'client.WebSocketClient'
+}
 
+bootJar {
+    destinationDirectory = file(project(':').projectDir)
+}
